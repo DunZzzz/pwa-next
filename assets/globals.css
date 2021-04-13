@@ -1,0 +1,58 @@
+/* emilien <emilien@emilien-lx>, 2021 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'signika';
+	src: url('./Signika/Signika-VariableFont_wght.ttf')  format('truetype');
+	src: url('./Signika/Signika-VariableFont_wght.woff2') format('woff2'), /* Super Modern Browsers */
+		url('./Signika/Signika-VariableFont_wght.woff') format('woff'), /* Pretty Modern Browsers */
+		url('./Signika/Signika-VariableFont_wght.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+	font-family: 'swankyAndMooMoo';
+	src: url('./SwankyAndMooMoo/SwankyAndMooMoo-Regular.ttf')  format('truetype');
+	src: url('./SwankyAndMooMoo/SwankyAndMooMoo-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+	url('./SwankyAndMooMoo/SwankyAndMooMoo-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+	url('./SwankyAndMooMoo/SwankyAndMooMoo-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
+
+@layer base {
+	body { @apply text-gray-900; overflow-x: hidden; }
+	h1 { @apply text-7xl font-black leading-snug; }
+	h2 { @apply text-5xl font-black leading-snug; }
+	h3 { @apply text-4xl font-black leading-snug; }
+	h4 { @apply text-3xl font-black leading-snug; }
+	h5 { @apply text-2xl font-semibold; }
+	h6 { @apply text-xl font-medium; }
+}
+
+@layer components {
+	.text-primary { @apply text-gray-900; }
+	.subtitle { @apply text-lg font-medium; }
+	.lead-lg { @apply text-lg font-normal; }
+	.lead-md { @apply text-sm font-normal; }
+	.body-md { @apply text-base; }
+	.body-sm { @apply text-sm; }
+	.label-sm { @apply text-xs font-bold; }
+	.label-md { @apply text-sm font-bold; }
+	.label-lg { @apply text-xl font-bold; }
+	.h1 { @apply text-7xl font-black leading-snug; }
+	.h2 { @apply text-5xl font-black leading-snug; }
+	.h3 { @apply text-4xl font-black leading-snug; }
+	.h4 { @apply text-3xl font-black leading-snug; }
+	.h5 { @apply text-2xl font-semibold; }
+	.h6 { @apply text-xl font-medium; }
+	/*.padded-container { @apply container px-8; }*/
+
+	.text-shadow-sm { text-shadow: 1px 1px 3px rgb(36 37 47 / 25%); }
+	.text-shadow-md { text-shadow: 0px 1px 2px rgb(30 29 39 / 19%), 1px 2px 4px rgb(54 64 147 / 18%) }
+	.text-shadow-lg { text-shadow: 3px 3px 6px rgb(0 0 0 / 26%), 0 0 5px rgb(15 3 86 / 22%) }
+	.text-shadow-xl { text-shadow: 1px 1px 3px rgb(0 0 0 / 29%), 2px 4px 7px rgb(73 64 125 / 35%) }
+
+	.article-container { @apply container px-14 mx-auto max-w-4xl; }
+}
