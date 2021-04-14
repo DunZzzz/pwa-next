@@ -12,7 +12,7 @@ export default {
 } as Meta;
 
 const Template: Story = args => <Icon {...args} />;
-import ArrowLeft from '@components/Icons/outline/ArrowLeft';
+import ArrowLeft from '@/components/Icons/outline/ArrowLeft';
 
 export const Default = Template.bind({});
 Default.args = {

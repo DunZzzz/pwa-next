@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
+    "storybook-start-dev": "start-storybook -p 6006",
+    "storybook": "yarn watch-svg & yarn storybook-start-dev",
 	"generate-svg": "npx @svgr/cli --config-file .svgrrc.js --out-dir components/Icons ./assets/icons",
 	"watch-svg": "while inotifywait -q -r -e close_write,moved_to,move_self ./assets/icons/ | grep '\\.svg$'; do yarn generate-svg; done",
     "build-storybook": "build-storybook"

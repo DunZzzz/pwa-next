@@ -3,7 +3,7 @@
 import React, { ReactElement } from 'react';
 import Image from 'next/image';
 import { css } from 'twin.macro';
-import { lazy } from '@src/lazy';
+import { lazy } from '@/src/lazy';
 
 const _iconSizes = {
 	sm: '1rem',

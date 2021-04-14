@@ -1,42 +1,54 @@
 /* emilien <emilien@emilien-lx>, 2021 */
 
 import React, { ReactChild } from 'react';
-import { Icon } from '@components/static/Icon';
-import { ArrowLeft } from '@components/Icons/outline/';
+import tw, { styled } from 'twin.macro';
+import { Icon } from '@/components/static/Icon';
+import { ArrowLeft } from '@/components/Icons/outline/';
 
-/**
- * ICommonHead.
- */
+const Heading = styled.h1(({ centered = false }: { centered: boolean }) => [
+	tw`text-3xl font-bold tracking-wide`,
+	centered && tw`text-center`,
+]);
+
+const Description = styled.p(({ centered = false }: { centered: boolean }) => [
+	tw`mt-4 text-gray-600 tracking-wide`,
+	centered && tw`text-center`,
+]);
+
+/** Interface of CommonHead component.  */
 interface ICommonHead {
-	/** Show the "previous page" button above the title.  */
-	previousButton: boolean;
 	title: ReactChild;
 	description: ReactChild;
+	/** Center the title and description horizontally.  */
+	centered?: boolean;
+	/** Show the "previous page" button above the title.  */
+	previousBtn?: boolean;
 }
 
 /**
  * Common page header with title, description and an optional previous page button (viewable on login page)
  */
 export function CommonHead({
-	previousButton,
 	title,
 	description,
+	centered = false,
+	previousBtn = false,
 }: ICommonHead) {
 	return (
 		<div>
-			<div className="h-14 flex items-center">
-				<div className="flex items-center text-gray-600">
-					<Icon size="md" icon={<ArrowLeft />} />
-					<p className="ml-2 text-xl font-semibold tracking-wide leading-none">
-						Back
-					</p>
-				</div>
+			<div tw="h-14 flex items-center">
+				{previousBtn && (
+					<div tw="flex items-center text-gray-600">
+						<Icon size="md" icon={<ArrowLeft />} />
+						<p tw="ml-2 text-xl font-semibold tracking-wide leading-none">
+							Back
+						</p>
+					</div>
+				)}
 			</div>
-			<div className="mt-6 text-center">
-				<h1 className="text-3xl font-bold tracking-wide">{title}</h1>
-				<p className="mt-4 text-gray-600 tracking-wide">
-					{description}
-				</p>
+			<div tw="mt-6">
+				<Heading centered={centered}>{title}</Heading>
+				<Description centered={centered}>{description}</Description>
 			</div>
 		</div>
 	);
