@@ -5,6 +5,7 @@ const _colors = require('tailwindcss/colors');
 
 const colors = {
 			..._colors,
+			transparent: 'transparent',
 			'brand-yellow': {
 				400: '#ffbe0b',
 				300: '#ffcf49',

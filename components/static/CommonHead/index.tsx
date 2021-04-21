@@ -4,6 +4,7 @@ import React, { ReactChild } from 'react';
 import tw, { styled } from 'twin.macro';
 import { Icon } from '@/components/static/Icon';
 import { ArrowLeft } from '@/components/Icons/outline/';
+import { useRouter } from 'next/router';
 
 const Heading = styled.h1(({ centered = false }: { centered: boolean }) => [
 	tw`text-3xl font-bold tracking-wide`,
@@ -23,6 +24,8 @@ interface ICommonHead {
 	centered?: boolean;
 	/** Show the "previous page" button above the title.  */
 	previousBtn?: boolean;
+	/** Lambda function to be executed when the back button is pressed */
+	previousAction: string | (() => void);
 }
 
 /**
@@ -33,12 +36,23 @@ export function CommonHead({
 	description,
 	centered = false,
 	previousBtn = false,
+	previousAction = (router) => router.back(),
 }: ICommonHead) {
+	const router = useRouter();
+
+	const _backBtnClicked = () => {
+		if (typeof previousAction === 'function') {
+			previousAction(router);
+		} else {
+			router.push(previousAction);
+		}
+	};
+
 	return (
-		<div>
+		<div tw="mb-10">
 			<div tw="h-14 flex items-center">
 				{previousBtn && (
-					<div tw="flex items-center text-gray-600">
+					<div tw="flex items-center text-gray-600 cursor-pointer" onClick={() => _backBtnClicked()}>
 						<Icon size="md" icon={<ArrowLeft />} />
 						<p tw="ml-2 text-xl font-semibold tracking-wide leading-none">
 							Back

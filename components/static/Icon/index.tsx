@@ -30,5 +30,5 @@ interface IIcon {
 export function Icon({ size = 'md', color = 'currentColor', icon }: IIcon) {
 	const _size = _iconSizes[size];
 
-	return <div css={{ fontSize: _size }}>{icon}</div>;
+	return <div css={{ fontSize: _size, color }}>{icon}</div>;
 }

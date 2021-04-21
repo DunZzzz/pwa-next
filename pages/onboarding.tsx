@@ -8,20 +8,22 @@ import { BulletItem } from '@/components/static/BulletItem';
 import { theme } from 'twin.macro';
 import { Icon } from '@/components/static/Icon';
 import { ArrowRight } from '@/components/Icons/outline';
+import { BigLink } from '@/components/static/Link';
+import { SimplePageContainer } from '@/components/static/SimplePageContainer';
 import 'twin.macro';
 
 interface IOnboarding {}
 
 export function Onboarding({}: IOnboarding) {
 	return (
-		<div>
+		<SimplePageContainer>
 			<BackgroundLogo />
 			<CommonHead
 				title="Let’s start mailing!"
 				description="The most effective web based mail reader you will ever find!"
 				centered={true}
 			/>
-			<div tw="flex items-center gap-12 my-16 flex-col">
+			<div tw="flex items-center gap-12 mt-6 mb-16 flex-col">
 				<BulletItem bulletColor={theme`colors.brand-purple.400`}>
 					Offline mail reading
 				</BulletItem>
@@ -36,12 +38,12 @@ export function Onboarding({}: IOnboarding) {
 				</BulletItem>
 			</div>
 			<Link href="/first-login">
-			<a tw="flex gap-1 items-center justify-center text-brand-blue-400 text-xl cursor-pointer">
+				<BigLink tw="flex gap-1 items-center justify-center">
 					<span>Sound's good let's start!</span>
 					<ArrowRight />
-				</a>
+				</BigLink>
 			</Link>
-		</div>
+		</SimplePageContainer>
 	);
 }
 

@@ -1,7 +1,7 @@
 /* emilien <emilien@emilien-lx>, 2021 */
 
 import React from 'react';
-import { lazy } from '@src/lazy';
+import { lazy } from '@/src/lazy';
 import tw, { styled, css } from 'twin.macro';
 
 const _Template = tw.button`
@@ -12,10 +12,8 @@ const _Template = tw.button`
 export const buttonSize = {
 	sm: lazy(() => tw`text-xs tracking-wide py-2 px-4`),
 	md: lazy(() => tw`text-sm py-2.5 px-10`),
-	lg: lazy(() => tw`text-sm py-3.5 px-12`),
+	lg: lazy(() => tw`text-xl py-4 px-12`),
 };
-
-console.log(buttonSize);
 
 export const buttonType = {
 	primary: lazy(() => tw`bg-brand-purple-400 text-white`),
