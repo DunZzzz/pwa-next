@@ -1,6 +1,6 @@
 /* emilien <emilien@emilien-lx>, 2021 */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { theme } from 'twin.macro';
 import { BackgroundLogo } from '@/components/static/BackgroundLogo';
 
@@ -12,6 +12,11 @@ const _Splash = () => (
 );
 
 export default function Home() {
+
+	useEffect(() => {
+		console.log('waiting');
+	}, []);
+
 	return (
 		<_Splash />
 	);

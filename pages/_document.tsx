@@ -29,12 +29,14 @@ export default class MyDocument extends Document {
 
 	render() {
 		return (
-			<Html>
+			<Html lang="en">
 				<Head>
+					<meta charset="utf-8" />
 					<meta
 						name="application-name"
 						content="PWMail, a pwa mail client"
 					/>
+					<title>Mail PWA</title>
 					<meta name="apple-mobile-web-app-capable" content="yes" />
 					<meta
 						name="apple-mobile-web-app-status-bar-style"
@@ -69,7 +71,7 @@ export default class MyDocument extends Document {
 						sizes="16x16"
 						href="/favicon-16x16.png"
 					/>
-					<link rel="manifest" href="/site.webmanifest" />
+					<link rel="manifest" href="/manifest.json" />
 					<link
 						rel="mask-icon"
 						href="/safari-pinned-tab.svg"

@@ -33,6 +33,13 @@ export function FirstLogin({}: IFirstLogin) {
 		case 'login':
 			return <LoginPage updateForm={(data) => setForm({ ...form, ...data })} />;
 		case 'provider':
+			/* Check for invalid form */
+			console.log('the form: ', form);
+			if (['name', 'email', 'password'].find(x => !form[x] || form[x].length < 3)) {
+				router.push('/first-login');
+				return <LoadingPage />
+			}
+
 			return <EmailProvider updateForm={(data) => setForm({ ...form, ...data })} />;
 		default:
 			router.push('/first-login');
