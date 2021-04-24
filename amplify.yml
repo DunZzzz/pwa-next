@@ -8,7 +8,7 @@ frontend:
     build:
       commands:
         - yarn generate-svg
-        - yarn generate
+        - yarn build
   artifacts:
     baseDirectory: dist
     files:
