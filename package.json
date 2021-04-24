@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development next dev",
-    "build": "next build",
-    "generate": "next generate",
+    "build": "next build && next export",
     "start": "next start",
     "storybook-start-dev": "start-storybook -p 6006",
     "storybook": "yarn watch-svg & yarn storybook-start-dev",

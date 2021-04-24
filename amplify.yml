@@ -10,7 +10,7 @@ frontend:
         - yarn generate-svg
         - yarn build
   artifacts:
-    baseDirectory: dist
+    baseDirectory: out
     files:
       - '**/*'
   cache:
