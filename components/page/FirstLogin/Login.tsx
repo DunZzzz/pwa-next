@@ -5,13 +5,15 @@ import Link from 'next/link';
 import { CommonHead } from '@/components/static/CommonHead';
 import { Form } from '@/components/static/Form';
 import { Input } from '@/components/static/Input';
-import { Button } from '@/components/static/Button';
+import { UButton } from '@/components/static/Button';
 import { SimplePageContainer } from '@/components/static/SimplePageContainer';
 import 'twin.macro';
 
-interface ILogin {}
+interface ILogin {
+	updateForm: (any) => void;
+}
 
-export function Login({}: ILogin) {
+export function Login({ updateForm }: ILogin) {
 	return (
 		<SimplePageContainer>
 			<CommonHead
@@ -19,11 +21,28 @@ export function Login({}: ILogin) {
 				description="Start using the app by adding a new user to your account !"
 			/>
 			<Form>
-				<Input label="Name" placeholder="John" />
-				<Input label="Email" placeholder="john.doe@mail.com" />
-				<Input label="Password" placeholder="*****" />
+				<Input
+					onChange={(val, name) => updateForm({ [name]: val })}
+					name="name"
+					label="Name"
+					placeholder="John"
+				/>
+				<Input
+					onChange={(val, name) => updateForm({ [name]: val })}
+					name="email"
+					label="Email"
+					placeholder="john.doe@mail.com"
+				/>
+				<Input
+					onChange={(val, name) => updateForm({ [name]: val })}
+					name="password"
+					label="Password"
+					placeholder="*****"
+				/>
 				<Link href="/first-login?step=provider">
-					<Button size="lg" tw="mt-1">Continue</Button>
+					<UButton size="lg" tw="mt-1">
+						Continue
+					</UButton>
 				</Link>
 			</Form>
 		</SimplePageContainer>

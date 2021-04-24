@@ -1,6 +1,6 @@
 /* emilien <emilien@emilien-lx>, 2021 */
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import 'twin.macro';
 
 interface IForm {

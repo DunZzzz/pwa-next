@@ -90,7 +90,7 @@ const checkboxStyle = css`
 interface ICheckbox {
 	label: string;
 	name: string;
-	checked: boolean;
+	checked?: boolean;
 	disable?: boolean;
 }
 

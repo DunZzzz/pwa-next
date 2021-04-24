@@ -1,5 +1,6 @@
 /* emilien <emilien@emilien-lx>, 2021 */
 
+import { FC } from 'react';
 import { Head } from 'next/document';
 import GlobalStyles from '@/components/GlobalStyles';
 import '@/assets/globals.css';
@@ -10,7 +11,7 @@ if (process.env.NODE_ENV === 'development') {
 	makeServer({ environment: 'development' });
 }
 
-const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => (
+const WrappedApp: FC<any> = ({ Component, pageProps }) => (
 	<>
 		<GlobalStyles />
 		<Component {...pageProps} />

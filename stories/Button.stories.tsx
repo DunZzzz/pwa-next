@@ -3,41 +3,41 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
-import { Button } from './index';
+import { UButton } from './index';
 
 export default {
-	title: 'Example/Button',
-	component: Button,
+	title: 'Example/UButton',
+	component: UButton,
 	argTypes: {},
 } as Meta;
 
-const Template: Story = (args) => <Button {...args}>{args.label}</Button>;
+const Template: Story = (args) => <UButton {...args}>{args.label}</UButton>;
 
 export const Default = Template.bind({});
 Default.args = {
-	label: 'Button',
+	label: 'UButton',
 	test: 123,
 };
 
 export const Primary = Template.bind({});
 Primary.args = {
-	label: 'Button',
+	label: 'UButton',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-	label: 'Button',
+	label: 'UButton',
 	type: 'secondary',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-	label: 'Button',
+	label: 'UButton',
 	size: 'lg',
 };
 
 export const Small = Template.bind({});
 Small.args = {
-	label: 'Button',
+	label: 'UButton',
 	size: 'sm',
 };

@@ -15,7 +15,7 @@ const _iconSizes = {
  * Icon component props.
  */
 interface IIcon {
-	size?: keyof _iconSizes;
+	size?: keyof typeof _iconSizes;
 	color?: string;
 	icon: ReactElement;
 }

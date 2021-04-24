@@ -3,6 +3,10 @@
 const withPWA = require('next-pwa');
 
 module.exports = withPWA({
+	future: { webpack5: true },
+	typescript: {
+		ignoreBuildErrors: true,
+	},
 	pwa: {
 		dest: 'public',
 		register: true,

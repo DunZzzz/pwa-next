@@ -25,7 +25,7 @@ interface ICommonHead {
 	/** Show the "previous page" button above the title.  */
 	previousBtn?: boolean;
 	/** Lambda function to be executed when the back button is pressed */
-	previousAction: string | (() => void);
+	previousAction?: any;
 }
 
 /**
