@@ -1,0 +1,8 @@
+#!/bin/sh
+
+curl -X POST \
+	-H "Authorization: Custom-0 am5nhNaf0MyK/b9/4n7I8idlrekdYhTHUwn/kouLWUw" \
+	--data "subject=Hello World" \
+	--data "text_body=This is my awesome message" \
+	--data "recipient=emilien.jegou1@gmail.com" \
+	localhost/send-mail

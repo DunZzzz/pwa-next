@@ -1,0 +1,4 @@
+#!/bin/sh
+
+curl localhost/user -H "Authorization: Custom-0 am5nhNaf0MyK/b9/4n7I8idlrekdYhTHUwn/kouLWUw"
+

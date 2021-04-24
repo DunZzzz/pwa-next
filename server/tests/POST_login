@@ -1,0 +1,9 @@
+#!/bin/sh
+
+curl -X POST \
+	--data "name=Emilien Jegou" \
+	--data "mail=hello@emilien.dev" \
+	--data "password=8991ijbP0O" \
+	--data "mail_provider=mail.privateemail.com" \
+	localhost/login
+
