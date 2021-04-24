@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "NODE_ENV=development next dev",
     "build": "next build",
+    "generate": "next generate",
     "start": "next start",
     "storybook-start-dev": "start-storybook -p 6006",
     "storybook": "yarn watch-svg & yarn storybook-start-dev",
