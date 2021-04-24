@@ -12,9 +12,10 @@ import 'twin.macro';
 
 interface IEmailProvider {
 	updateForm: (any) => void;
+	submit: () => void;
 }
 
-export function EmailProvider({ updateForm }: IEmailProvider) {
+export function EmailProvider({ updateForm, submit }: IEmailProvider) {
 	return (
 		<SimplePageContainer>
 			<CommonHead
@@ -32,11 +33,9 @@ export function EmailProvider({ updateForm }: IEmailProvider) {
 				/>
 				<Checkbox name="nap" label="Use same name and password." />
 				<Checkbox name="advism" label="Advanced IMAP/SMTP settings." />
-				<Link href="/inbox">
-					<UButton size="lg" tw="mt-1">
-						Continue
-					</UButton>
-				</Link>
+				<UButton onClick={submit} size="lg" tw="mt-1">
+					Continue
+				</UButton>
 			</Form>
 		</SimplePageContainer>
 	);

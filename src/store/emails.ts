@@ -19,7 +19,7 @@ const initialState: {
 
 export const fetchMailList = createAsyncThunk(
 	'emails/fetchMailList',
-	async () => (await fetchEmails()).data,
+	async ({ id }) => await fetchEmails({ id }),
 );
 
 export const emailsSlice = createSlice({

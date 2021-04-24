@@ -1,3 +1,5 @@
+/* emilien <emilien@emilien-lx>, 04/2021 */
+
 import { ServerStyleSheet } from 'styled-components';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
@@ -31,7 +33,7 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="en">
 				<Head>
-					<meta charset="utf-8" />
+					<meta charSet="utf-8" />
 					<meta
 						name="application-name"
 						content="PWMail, a pwa mail client"
@@ -80,7 +82,7 @@ export default class MyDocument extends Document {
 					<meta name="msapplication-TileColor" content="#1b0149" />
 					<meta name="theme-color" content="#ffffff" />
 					<meta name="twitter:card" content="summary" />
-					<meta name="twitter:url" content="https://yourdomain.com" />
+					{/*<meta name="twitter:url" content="https://yourdomain.com" />*/}
 					<meta name="twitter:title" content="PWA Mail App" />
 					<meta
 						name="twitter:description"

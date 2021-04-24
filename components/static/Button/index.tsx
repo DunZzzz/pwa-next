@@ -31,14 +31,6 @@ interface IButton {
 	size?: 'sm' | 'md' | 'lg';
 }
 
-//export const UButton = ({ type = 'primary', size = 'md', children, tw } : IButton) => (
-	//<_Template tw={ tw } css={[
-		//buttonType[type](),
-		//buttonSize[size](),
-	//]}>
-		//{ children }
-	//</_Template>
-//)
 export const UButton = styled(_Template)(({ type = 'primary', size = 'md' } : IButton) => [
 	buttonType[type](),
 	buttonSize[size](),

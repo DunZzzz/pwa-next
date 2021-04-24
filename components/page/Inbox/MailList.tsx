@@ -5,19 +5,33 @@ import { useDispatch, useSelector } from 'react-redux';
 import { MailCard } from './MailCard';
 import { fetchMailList, getMailList, getMailStatus } from '@/src/store/emails';
 import { useRouter } from 'next/router';
+import { getUserData } from '@/src/store/user';
 import 'twin.macro';
+import { _get } from '@/src/store/util';
 
 interface IMailList {}
 
 export function MailList({}: IMailList) {
 	const dispatch = useDispatch();
 	const mailList = useSelector(getMailList);
+	const userData = useSelector(getUserData);
 	const mailStatus = useSelector(getMailStatus);
 	const router = useRouter();
 
 	useEffect(() => {
 		if (mailStatus === 'idle') {
-			dispatch(fetchMailList());
+			let id = userData
+				? userData.id
+				: (() => {
+						let t = _get('userData');
+						return t && t.id;
+				  })();
+
+			if (id === undefined) {
+				router.push('/first-login');
+			} else {
+				//dispatch(fetchMailList({ id }));
+			}
 		}
 	}, [dispatch, mailStatus]);
 

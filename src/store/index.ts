@@ -6,11 +6,13 @@ import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 
 /** Imported reducers */
 import { emailsSlice } from './emails';
+import { userSlice } from './user';
 
 const makeStore = () =>
 	configureStore({
 		reducer: {
 			[emailsSlice.name]: emailsSlice.reducer,
+			[userSlice.name]: userSlice.reducer,
 		},
 	});
 
